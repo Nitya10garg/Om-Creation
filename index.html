@@ -781,11 +781,11 @@
     const qvWishlistBtn = document.getElementById('qv-wishlist-btn');
     const qvWhatsappBtn = document.getElementById('qv-whatsapp-btn');
 
-    window.startHoverQuickView = function(productId) {
+    window.HoverQuickView = function(productId) {
       cancelHoverQuickView();
       hoverTimer = setTimeout(() => {
         openQuickView(productId);
-      }, 450);
+      }, 1000);
     };
 
     window.cancelHoverQuickView = function() {
