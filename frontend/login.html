@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Sign Up — Om Creation Poshak Corner</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between antialiased">
+
+  <!-- Top Minimal Header -->
+  <header class="bg-white border-b border-slate-200 py-4 px-6">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-amber-700 transition-colors">
+          ॐ
+        </div>
+        <div>
+          <span class="text-base font-extrabold text-slate-900 block leading-none">Om Creation</span>
+          <span class="text-[10px] font-semibold text-amber-700 tracking-wider uppercase">Poshak Corner</span>
+        </div>
+      </a>
+      <a href="index.html" class="text-xs font-semibold text-slate-600 hover:text-amber-700 transition-colors">
+        ← Back to Shop
+      </a>
+    </div>
+  </header>
+
+  <!-- Centered Auth Card -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-6">
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8 space-y-6">
+      
+      <div class="text-center space-y-1.5">
+        <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+          🪔 Jai Shri Radhe
+        </span>
+        <h1 id="auth-title" class="text-2xl font-extrabold text-slate-900">Welcome Back</h1>
+        <p id="auth-subtitle" class="text-xs text-slate-500">Sign in to access your saved cart, wishlist & orders</p>
+      </div>
+
+      <!-- Mode Switch Tabs -->
+      <div class="grid grid-cols-2 bg-slate-100 p-1 rounded-xl text-xs font-semibold">
+        <button id="tab-login" type="button" class="py-2 rounded-lg bg-white text-slate-900 shadow-sm transition-all cursor-pointer">
+          Login
+        </button>
+        <button id="tab-signup" type="button" class="py-2 rounded-lg text-slate-500 hover:text-slate-900 transition-all cursor-pointer">
+          Create Account
+        </button>
+      </div>
+
+      <!-- Alert Message Box -->
+      <div id="alert-box" class="hidden p-3 rounded-xl text-xs font-medium"></div>
+
+      <!-- Auth Form -->
+      <form id="auth-form" class="space-y-4">
+        <div id="name-field" class="hidden">
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+          <input id="input-name" type="text" placeholder="e.g., Nitya Garg" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address *</label>
+          <input id="input-email" type="email" required placeholder="you@example.com" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+
+        <div id="phone-field" class="hidden">
+          <label class="block text-xs font-semibold text-slate-700 mb-1">WhatsApp / Phone Number</label>
+          <input id="input-phone" type="tel" placeholder="e.g., 9876543210" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Password *</label>
+          <input id="input-password" type="password" required minlength="6" placeholder="Minimum 6 characters" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+
+        <button id="submit-btn" type="submit" class="w-full py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl text-xs shadow-md transition-all cursor-pointer">
+          Login to Account
+        </button>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="text-center py-4 text-[11px] text-slate-400">
+    Om Creation Poshak Corner · Secure Account Portal
+  </footer>
+
+  <script>
+    const API_BASE_URL = 'http://localhost:5000/api';
+    let mode = 'login'; // 'login' or 'signup'
+
+    // If already logged in, redirect straight to shop
+    if (localStorage.getItem('om_token') && localStorage.getItem('om_user')) {
+      window.location.href = 'index.html';
+    }
+
+    const tabLogin = document.getElementById('tab-login');
+    const tabSignup = document.getElementById('tab-signup');
+    const nameField = document.getElementById('name-field');
+    const phoneField = document.getElementById('phone-field');
+    const inputName = document.getElementById('input-name');
+    const authTitle = document.getElementById('auth-title');
+    const authSubtitle = document.getElementById('auth-subtitle');
+    const submitBtn = document.getElementById('submit-btn');
+    const alertBox = document.getElementById('alert-box');
+    const authForm = document.getElementById('auth-form');
+
+    function switchMode(newMode) {
+      mode = newMode;
+      alertBox.classList.add('hidden');
+
+      if (mode === 'login') {
+        tabLogin.className = 'py-2 rounded-lg bg-white text-slate-900 shadow-sm transition-all cursor-pointer';
+        tabSignup.className = 'py-2 rounded-lg text-slate-500 hover:text-slate-900 transition-all cursor-pointer';
+        nameField.classList.add('hidden');
+        phoneField.classList.add('hidden');
+        inputName.required = false;
+        authTitle.textContent = 'Welcome Back';
+        authSubtitle.textContent = 'Sign in to access your saved cart, wishlist & orders';
+        submitBtn.textContent = 'Login to Account';
+      } else {
+        tabSignup.className = 'py-2 rounded-lg bg-white text-slate-900 shadow-sm transition-all cursor-pointer';
+        tabLogin.className = 'py-2 rounded-lg text-slate-500 hover:text-slate-900 transition-all cursor-pointer';
+        nameField.classList.remove('hidden');
+        phoneField.classList.remove('hidden');
+        inputName.required = true;
+        authTitle.textContent = 'Create Your Account';
+        authSubtitle.textContent = 'Join Om Creation Poshak Corner for faster seva orders';
+        submitBtn.textContent = 'Create Account';
+      }
+    }
+
+    tabLogin.addEventListener('click', () => switchMode('login'));
+    tabSignup.addEventListener('click', () => switchMode('signup'));
+
+    function showAlert(message, isError = true) {
+      alertBox.textContent = message;
+      alertBox.className = isError
+        ? 'p-3 rounded-xl text-xs font-medium bg-red-50 border border-red-200 text-red-700'
+        : 'p-3 rounded-xl text-xs font-medium bg-emerald-50 border border-emerald-200 text-emerald-700';
+      alertBox.classList.remove('hidden');
+    }
+
+    authForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      alertBox.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Please wait...';
+
+      const payload = {
+        email: document.getElementById('input-email').value.trim(),
+        password: document.getElementById('input-password').value
+      };
+
+      if (mode === 'signup') {
+        payload.name = inputName.value.trim();
+        payload.phone = document.getElementById('input-phone').value.trim();
+      }
+
+      try {
+        const endpoint = mode === 'signup' ? '/signup' : '/login';
+        const res = await fetch(`${API_BASE_URL}${endpoint}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Authentication failed');
+
+        localStorage.setItem('om_token', data.token);
+        localStorage.setItem('om_user', JSON.stringify(data.user));
+
+        showAlert(`Jai Shri Radhe, ${data.user.name}! Redirecting to shop...`, false);
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 900);
+      } catch (err) {
+        showAlert(err.message, true);
+        submitBtn.disabled = false;
+        submitBtn.textContent = mode === 'signup' ? 'Create Account' : 'Login to Account';
+      }
+    });
+  </script>
+</body>
+</html>
