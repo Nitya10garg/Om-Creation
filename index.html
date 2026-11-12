@@ -4,34 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Om Creation Poshak Corner — Jai Shri Radhe | Handcrafted Divine Poshak</title>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f8fafc',
-              100: '#f1f5f9',
-              200: '#e2e8f0',
-              800: '#1e293b',
-              900: '#0f172a',
-              accent: '#3b82f6',
-              emerald: '#10b981'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -67,7 +43,6 @@
           <button id="btn-quick-switch-role" class="text-blue-400 hover:text-blue-300 underline ml-1 cursor-pointer">Switch</button>
         </div>
         <button id="btn-open-privacy-top" class="text-slate-400 hover:text-white flex items-center gap-1 transition-colors">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
           Privacy Center
         </button>
       </div>
@@ -97,19 +72,17 @@
           <button id="tab-btn-shop" class="nav-tab px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-semibold transition-colors">
             Shop Catalog
           </button>
-          <button id="tab-btn-orders" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors relative">
+          <button id="tab-btn-orders" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors">
             My Orders
-            <span id="nav-orders-count" class="hidden ml-1 px-1.5 py-0.2 text-[10px] font-bold bg-slate-200 text-slate-700 rounded-full">0</span>
           </button>
-          <button id="tab-btn-wishlist" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors relative">
+          <button id="tab-btn-wishlist" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors">
             Wishlist
-            <span id="nav-wishlist-count" class="ml-1 px-1.5 py-0.2 text-[10px] font-bold bg-pink-100 text-pink-700 rounded-full">0</span>
+            <span id="nav-wishlist-count" class="ml-1 px-1.5 py-0.5 text-[10px] font-bold bg-pink-100 text-pink-700 rounded-full">0</span>
           </button>
           <button id="tab-btn-privacy" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors">
             Privacy & Safety
           </button>
           <button id="tab-btn-admin" class="nav-tab hidden px-3 py-2 rounded-lg text-amber-700 bg-amber-50 hover:bg-amber-100 font-semibold transition-colors items-center gap-1.5">
-            <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             Admin Console
           </button>
         </nav>
@@ -117,165 +90,41 @@
         <!-- Search Bar -->
         <div class="flex-1 max-w-xs relative hidden sm:block">
           <input id="header-search-input" type="text" placeholder="Search curated poshak..." class="w-full pl-9 pr-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
-          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </div>
 
         <!-- Action Buttons -->
         <div class="flex items-center gap-2">
-          <!-- User / Auth Control -->
           <div class="relative">
             <button id="user-menu-btn" class="flex items-center gap-2 py-1.5 px-3 rounded-full border border-slate-200 hover:border-slate-300 bg-white text-xs font-medium text-slate-700 hover:bg-slate-50 transition-colors">
-              <div id="user-avatar-icon" class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-[11px]">
-                U
-              </div>
+              <div class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-[11px]">U</div>
               <span id="user-name-display" class="hidden sm:inline">Guest Bhakt</span>
-              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            
-            <!-- User Dropdown Menu -->
             <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-slate-200 py-1.5 z-50 text-xs">
               <div class="px-4 py-2 border-b border-slate-100">
-                <p id="dropdown-user-name" class="font-semibold text-slate-900">Guest Bhakt</p>
-                <p id="dropdown-user-email" class="text-slate-500 truncate text-[11px]">omcreation@example.com</p>
-                <div class="mt-1 flex items-center gap-1.5">
-                  <span id="dropdown-user-role" class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-100 text-blue-700">Verified Shopper</span>
-                </div>
+                <p class="font-semibold text-slate-900">Guest Bhakt</p>
+                <span id="dropdown-user-role" class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-100 text-blue-700">Verified Shopper</span>
               </div>
-              <button id="dropdown-item-orders" class="w-full text-left px-4 py-2 hover:bg-slate-50 text-slate-700 flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                My Orders
-              </button>
-              <button id="dropdown-item-privacy" class="w-full text-left px-4 py-2 hover:bg-slate-50 text-slate-700 flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                Security & Data Privacy
-              </button>
-              <button id="dropdown-item-admin" class="w-full text-left px-4 py-2 hover:bg-amber-50 text-amber-800 hidden items-center gap-2">
-                <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg>
-                Store Admin Portal
-              </button>
+              <button id="dropdown-item-orders" class="w-full text-left px-4 py-2 hover:bg-slate-50 text-slate-700">My Orders</button>
+              <button id="dropdown-item-privacy" class="w-full text-left px-4 py-2 hover:bg-slate-50 text-slate-700">Security & Data Privacy</button>
+              <button id="dropdown-item-admin" class="w-full text-left px-4 py-2 hover:bg-amber-50 text-amber-800 hidden">Store Admin Portal</button>
               <div class="border-t border-slate-100 my-1"></div>
-              <button id="dropdown-item-switch" class="w-full text-left px-4 py-2 hover:bg-slate-50 text-blue-600 flex items-center gap-2 font-medium">
-                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                Switch Account / Role
-              </button>
+              <button id="dropdown-item-switch" class="w-full text-left px-4 py-2 hover:bg-slate-50 text-blue-600 font-medium">Switch Account / Role</button>
             </div>
           </div>
-<!-- ================= PRODUCT QUICK VIEW MODAL ================= -->
-  <div id="quickview-modal-backdrop" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden overflow-y-auto p-4 sm:p-6">
-    <div class="min-h-full flex items-center justify-center">
-      <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden relative my-8">
-        
-        <!-- Close Button -->
-        <button id="btn-close-quickview" class="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center shadow-sm transition-all cursor-pointer">
-          ✕
-        </button>
 
-        <div class="grid grid-cols-1 md:grid-cols-2">
-          <!-- Full Uncropped Image Box -->
-          <div class="bg-amber-50/40 h-72 sm:h-96 md:h-[420px] w-full flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-slate-100">
-            <img id="qv-img" src="" alt="Product Full Image" class="max-h-full max-w-full object-contain rounded-xl drop-shadow-md">
-          </div>
-
-          <!-- Details & Actions -->
-          <div class="p-6 sm:p-8 flex flex-col justify-between space-y-5">
-            <div>
-              <div class="flex items-center gap-2 mb-2.5">
-                <span id="qv-tag" class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-amber-600 text-white"></span>
-                <span id="qv-category" class="text-xs font-semibold text-slate-400 uppercase tracking-wider"></span>
-              </div>
-              <h3 id="qv-title" class="text-xl font-bold text-slate-900 leading-snug"></h3>
-              <div id="qv-price" class="text-2xl font-extrabold text-amber-700 mt-2"></div>
-              <p id="qv-desc" class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
-                100% handmade pure crochet wool poshak with soft stitch finish. Designed for comfort and festive devotional shringar.
-              </p>
-              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 text-[11px] text-slate-600 space-y-1">
-                <div>✅ Soft skin-friendly wool for deity comfort</div>
-                <div>✅ Custom sizes available on WhatsApp chat</div>
-              </div>
-            </div>
-
-            <!-- Buttons inside Modal -->
-            <div class="space-y-2.5 pt-4 border-t border-slate-100">
-              <div class="flex gap-2">
-                <button id="qv-add-cart-btn" class="flex-1 py-2.5 bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold rounded-xl text-xs transition-colors cursor-pointer">
-                  + Add to Cart
-                </button>
-                <button id="qv-wishlist-btn" class="px-4 py-2.5 border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-pointer">
-                  <span id="qv-heart-icon">♡</span> Wishlist
-                </button>
-              </div>
-              <a id="qv-whatsapp-btn" href="#" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-xs shadow-md flex items-center justify-center gap-2 transition-all">
-                <span>💬 Order Now on WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-      <!-- Close Button -->
-      <button id="btn-close-quickview" class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center shadow-md transition-all">
-        ✕
-      </button>
-
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <!-- Full Image Box -->
-        <div class="bg-slate-100 h-64 md:h-96 w-full overflow-hidden flex items-center justify-center p-4">
-          <img id="qv-img" src="" alt="Product Full Image" class="w-full h-full object-contain rounded-xl shadow-sm">
-        </div>
-
-        <!-- Details & Actions -->
-        <div class="p-6 flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex items-center gap-2 mb-2">
-              <span id="qv-tag" class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-600 text-white"></span>
-              <span id="qv-category" class="text-xs font-semibold text-slate-400 uppercase tracking-wider"></span>
-            </div>
-            <h3 id="qv-title" class="text-lg font-bold text-slate-900 leading-snug"></h3>
-            <div id="qv-price" class="text-2xl font-extrabold text-amber-700 mt-2"></div>
-            <p id="qv-desc" class="text-xs text-slate-600 mt-3 leading-relaxed">
-              100% handmade pure crochet wool poshak with soft stitch finish. Perfect fit for daily seva and festivals.
-            </p>
-          </div>
-
-          <!-- Buttons inside Modal -->
-          <div class="space-y-2 pt-4 border-t border-slate-100">
-            <div class="flex gap-2">
-              <button id="qv-add-cart-btn" class="flex-1 py-2.5 bg-blue-50 text-blue-600 hover:bg-blue-100 font-semibold rounded-xl text-xs transition-colors">
-                + Add to Cart
-              </button>
-              <button id="qv-wishlist-btn" class="px-3.5 py-2.5 border border-slate-200 hover:bg-slate-50 text-slate-700 font-semibold rounded-xl text-xs flex items-center justify-center gap-1">
-                <span id="qv-heart-icon">♡</span> Wishlist
-              </button>
-            </div>
-            <a id="qv-whatsapp-btn" href="#" target="_blank" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-xs shadow-md flex items-center justify-center gap-1.5 transition-all">
-              <span>💬 Order Now on WhatsApp</span>
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-          <!-- Cart Slide-over Button -->
           <button id="btn-open-cart" class="relative p-2 rounded-full text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-            <span id="cart-counter-badge" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-blue-600 text-white text-[11px] font-bold flex items-center justify-center shadow-sm">
-              0
-            </span>
+            <span id="cart-counter-badge" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-blue-600 text-white text-[11px] font-bold flex items-center justify-center shadow-sm">0</span>
           </button>
 
-          <!-- Mobile Nav Toggle -->
           <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
-
       </div>
 
-      <!-- Mobile Nav Links Drawer -->
+      <!-- Mobile Nav Drawer -->
       <div id="mobile-nav-panel" class="hidden md:hidden py-3 border-t border-slate-200 space-y-1">
         <button id="mob-tab-shop" class="w-full text-left px-3 py-2 rounded-md font-medium text-blue-600 bg-blue-50">Shop Catalog</button>
         <button id="mob-tab-orders" class="w-full text-left px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-100">My Orders</button>
@@ -286,13 +135,13 @@
     </div>
   </header>
 
-  <!-- ================= NOTIFICATION TOAST CONTAINER ================= -->
+  <!-- ================= TOAST CONTAINER ================= -->
   <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-  <!-- ================= APP VIEWS (DYNAMIC SPA CONTENT) ================= -->
+  <!-- ================= MAIN CONTENT ================= -->
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
-    <!-- ----------------- VIEW 1: SHOP CATALOG ----------------- -->
+    <!-- VIEW 1: SHOP CATALOG -->
     <div id="view-shop" class="view-panel space-y-8">
       
       <!-- Hero Banner -->
@@ -313,8 +162,7 @@
             <a href="https://wa.me/916396158333?text=Radhe%20Radhe!%20I%20want%20to%20inquire%20about%20Om%20Creation%20Poshak" target="_blank" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center gap-2">
               <span>💬 WhatsApp: 6396 158 333</span>
             </a>
-            <button id="hero-safety-btn" class="px-5 py-2.5 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-medium text-xs sm:text-sm rounded-xl border border-slate-700 transition-all flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <button id="hero-safety-btn" class="px-5 py-2.5 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-medium text-xs sm:text-sm rounded-xl border border-slate-700 transition-all">
               Buyer Safety Policy
             </button>
           </div>
@@ -323,10 +171,8 @@
         <div class="absolute right-40 top-0 w-60 h-60 bg-emerald-600/15 rounded-full blur-2xl pointer-events-none"></div>
       </div>
 
-      <!-- Filters & Search Toolbar -->
+      <!-- Filters & Sort Bar -->
       <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
-        
-        <!-- Category Filters -->
         <div class="flex flex-wrap items-center gap-1.5 w-full md:w-auto" id="category-filter-group">
           <button data-cat="all" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white transition-all">All Poshak & Seva</button>
           <button data-cat="laddu-gopal" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Laddu Gopal Poshak</button>
@@ -338,56 +184,45 @@
           <button data-cat="bags" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Handmade Bags & Purses</button>
         </div>
 
-        <!-- Secondary Controls: Sort -->
-        <div class="flex flex-wrap items-center gap-3 w-full md:w-auto justify-between md:justify-end">
-          <div class="flex items-center gap-2">
-            <label for="sort-select" class="text-xs text-slate-500 font-medium">Sort:</label>
-            <select id="sort-select" class="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-blue-500">
-              <option value="featured">Featured First</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-            </select>
-          </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <label for="sort-select" class="text-xs text-slate-500 font-medium">Sort:</label>
+          <select id="sort-select" class="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            <option value="featured">Featured First</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+          </select>
         </div>
-
       </div>
 
       <!-- Products Grid -->
       <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <!-- Rendered dynamically via JavaScript -->
+        <!-- Rendered dynamically via JS -->
       </div>
-
     </div>
 
-    <!-- ----------------- VIEW 2: ORDERS ----------------- -->
+    <!-- VIEW 2: ORDERS -->
     <div id="view-orders" class="view-panel hidden space-y-6">
-      <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-        <div>
-          <h2 class="text-xl font-bold text-slate-900">My Orders & Inquiries</h2>
-          <p class="text-xs text-slate-500">History of your WhatsApp inquiry dispatches and cart checkouts.</p>
-        </div>
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-xl font-bold text-slate-900">My Orders & Inquiries</h2>
+        <p class="text-xs text-slate-500">History of your WhatsApp inquiry dispatches and cart checkouts.</p>
       </div>
-      <div id="orders-list-container" class="space-y-4">
-        <div class="text-center py-12 bg-white rounded-xl border border-slate-200 p-6">
-          <div class="w-12 h-12 mx-auto rounded-full bg-slate-100 text-slate-400 flex items-center justify-center text-xl mb-3">📦</div>
-          <h3 class="text-sm font-semibold text-slate-800">No active orders found</h3>
-          <p class="text-xs text-slate-500 mt-1">Browse our collection and initiate an order via WhatsApp!</p>
-        </div>
+      <div class="text-center py-12 bg-white rounded-xl border border-slate-200 p-6">
+        <div class="w-12 h-12 mx-auto rounded-full bg-slate-100 text-slate-400 flex items-center justify-center text-xl mb-3">📦</div>
+        <h3 class="text-sm font-semibold text-slate-800">No active orders found</h3>
+        <p class="text-xs text-slate-500 mt-1">Browse our collection and initiate an order via WhatsApp!</p>
       </div>
     </div>
 
-    <!-- ----------------- VIEW 3: WISHLIST ----------------- -->
+    <!-- VIEW 3: WISHLIST -->
     <div id="view-wishlist" class="view-panel hidden space-y-6">
       <div class="border-b border-slate-200 pb-4">
         <h2 class="text-xl font-bold text-slate-900">Saved Wishlist Items</h2>
         <p class="text-xs text-slate-500">Handpicked crochet items and deity seva poshak you saved.</p>
       </div>
-      <div id="wishlist-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <!-- Rendered dynamically -->
-      </div>
+      <div id="wishlist-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
     </div>
 
-    <!-- ----------------- VIEW 4: PRIVACY CENTER ----------------- -->
+    <!-- VIEW 4: PRIVACY -->
     <div id="view-privacy" class="view-panel hidden space-y-6">
       <div class="border-b border-slate-200 pb-4">
         <h2 class="text-xl font-bold text-slate-900">Privacy & Buyer Safety Policy</h2>
@@ -412,7 +247,7 @@
       </div>
     </div>
 
-    <!-- ----------------- VIEW 5: ADMIN CONSOLE ----------------- -->
+    <!-- VIEW 5: ADMIN -->
     <div id="view-admin" class="view-panel hidden space-y-6">
       <div class="border-b border-amber-200 bg-amber-50 p-4 rounded-xl flex items-center justify-between">
         <div>
@@ -421,124 +256,165 @@
         </div>
         <span class="px-2.5 py-1 bg-amber-200 text-amber-900 text-xs font-semibold rounded-full">Admin Active</span>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-white p-4 rounded-xl border border-slate-200">
-          <div class="text-xs text-slate-500">Total Live Catalog</div>
-          <div class="text-2xl font-bold text-slate-800 mt-1" id="admin-total-products">8 Items</div>
-        </div>
-        <div class="bg-white p-4 rounded-xl border border-slate-200">
-          <div class="text-xs text-slate-500">Contact Number</div>
-          <div class="text-2xl font-bold text-emerald-600 mt-1">+91 6396 158 333</div>
-        </div>
-        <div class="bg-white p-4 rounded-xl border border-slate-200">
-          <div class="text-xs text-slate-500">Base Starting Price</div>
-          <div class="text-2xl font-bold text-blue-600 mt-1">₹200</div>
-        </div>
-      </div>
     </div>
 
   </main>
 
-  <!-- ================= CART SLIDE-OVER MODAL ================= -->
-  <div id="cart-drawer-backdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity">
-    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
-      <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+  <!-- ================= PRODUCT QUICK VIEW MODAL ================= -->
+  <div id="quickview-modal-backdrop" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden overflow-y-auto">
+    <div class="flex min-h-screen items-center justify-center p-4 sm:p-6">
+      <div id="quickview-card" class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden relative">
         
-        <div class="p-4 border-b border-slate-200 flex items-center justify-between">
-          <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
-            <span>🛒 Your Devotional Cart</span>
-          </h3>
-          <button id="btn-close-cart" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-          </button>
-        </div>
+        <button id="btn-close-quickview" type="button" aria-label="Close modal" class="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center shadow-sm transition-all cursor-pointer">
+          ✕
+        </button>
 
-        <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-3">
-          <!-- Cart items render here -->
-        </div>
+        <button id="qv-prev-btn" type="button" aria-label="Previous product" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-800 font-bold flex items-center justify-center shadow-md border border-slate-200 transition-all cursor-pointer">
+          ‹
+        </button>
+        <button id="qv-next-btn" type="button" aria-label="Next product" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-800 font-bold flex items-center justify-center shadow-md border border-slate-200 transition-all cursor-pointer">
+          ›
+        </button>
 
-        <div class="p-4 border-t border-slate-200 space-y-3 bg-slate-50">
-          <div class="flex justify-between items-center text-sm">
-            <span class="text-slate-600">Subtotal:</span>
-            <span id="cart-total-price" class="font-bold text-slate-900 text-lg">₹0</span>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="bg-amber-50/40 h-72 sm:h-96 md:h-[430px] w-full flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-slate-100">
+            <img id="qv-img" src="" alt="Product Full Image" class="max-h-full max-w-full object-contain rounded-xl drop-shadow-md">
           </div>
-          <button id="btn-checkout-whatsapp" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all">
-            <span>Order Entire Cart on WhatsApp</span>
-          </button>
-          <p class="text-[11px] text-center text-slate-500">Jai Shri Radhe · No online  required · Payment via UPI on chat</p>
+
+          <div class="p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center gap-2 mb-2.5">
+                <span id="qv-tag" class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-amber-600 text-white"></span>
+                <span id="qv-category" class="text-xs font-semibold text-slate-400 uppercase tracking-wider"></span>
+              </div>
+              <h3 id="qv-title" class="text-xl font-bold text-slate-900 leading-snug"></h3>
+              <div id="qv-price" class="text-2xl font-extrabold text-amber-700 mt-2"></div>
+              <p id="qv-desc" class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed"></p>
+              
+              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 text-[11px] text-slate-600 space-y-1">
+                <div>✅ Soft, skin-friendly premium wool</div>
+                <div>✅ Custom deity sizes (0 to 6 no.) on WhatsApp</div>
+              </div>
+            </div>
+
+            <div class="space-y-2.5 pt-4 border-t border-slate-100">
+              <div class="flex gap-2">
+                <button id="qv-add-cart-btn" type="button" class="flex-1 py-2.5 bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold rounded-xl text-xs transition-colors cursor-pointer">
+                  + Add to Cart
+                </button>
+                <button id="qv-wishlist-btn" type="button" class="px-4 py-2.5 border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-pointer">
+                  <span id="qv-heart-icon">♡</span> Wishlist
+                </button>
+              </div>
+              <a id="qv-whatsapp-btn" href="#" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-xs shadow-md flex items-center justify-center gap-2 transition-all">
+                <span>💬 Order Now on WhatsApp</span>
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
 
-  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <!-- ================= CART SLIDE-OVER MODAL ================= -->
+  <div id="cart-drawer-backdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity">
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+          <h3 class="font-bold text-base text-slate-900">🛒 Your Devotional Cart</h3>
+          <button id="btn-close-cart" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">✕</button>
+        </div>
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+        <div class="p-4 border-t border-slate-200 space-y-3 bg-slate-50">
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-600">Subtotal:</span>
+            <span id="cart-total-price" class="font-bold text-slate-900 text-lg">₹0</span>
+          </div>
+          <button id="btn-checkout-whatsapp" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm shadow-md transition-all">
+            Order Entire Cart on WhatsApp
+          </button>
+          <p class="text-[11px] text-center text-slate-500">Jai Shri Radhe · No online card required · Payment via UPI on chat</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
   <script>
-    // Product Catalog Data with verified working Unsplash devotional / crochet craft images
+    // Update the 'image' paths below to match the exact filenames in your images/ folder!
     const products = [
       {
         id: 1,
-        name: "Laddu Gopal Winter Crochet Poshak (Size 0-2)",
+        name: "Blue Crochet Dress (Laddu Gopal Ji)",
         category: "laddu-gopal",
-        price: 200,
+        price: 99,
         tag: "Best Seller",
-        image: "images/img1.jpeg"
+        image: "images/img1.jpeg",
+        description: "Handcrafted blue, white, and black layered crochet dress with soft tie strings for Laddu Gopal Ji."
       },
       {
         id: 2,
-        name: "Handcrafted Laddu Gopal Heavy Zari Dress (Size 3-5)",
-        category: "laddu-gopal",
-        price: 250,
-        tag: "Handmade",
-        image: "images/img2.jpeg"
+        name: "Yellow Pink Mata Rani Dress with Patka",
+        category: "mata-rani",
+        price: 199,
+        tag: "Festive Seva",
+        image: "images/img2.jpeg",
+        description: "Multi-tiered yellow and pink crochet lehenga poshak with matching patka for Mata Rani."
       },
       {
         id: 3,
-        name: "Mata Rani Chunri & Velvet Lehenga Set",
-        category: "mata-rani",
-        price: 250,
-        tag: "Festive Seva",
-        image: "images/img3.jpeg"
+        name: "Orange Khatu Shyam Poshak",
+        category: "khatu-shyam",
+        price: 249,
+        tag: "Devotional",
+        image: "images/img3.jpeg ",
+        description: "Vibrant saffron-orange and white crochet poshak set crafted for Khatu Shyam Baba."
       },
       {
         id: 4,
-        name: "Khatu Shyam Baba Royal Baaga & Patka",
+        name: "White Multicolor Khatu Shyam Poshak",
         category: "khatu-shyam",
-        price: 200,
-        tag: "Devotional",
-        image: "images/img4.jpeg "
+        price: 229,
+        tag: "Handmade",
+        image: "images/img4.jpeg",
+        description: "Pure white crochet poshak with bright yellow, orange, and royal blue scalloped borders."
       },
       {
         id: 5,
-        name: "Soft Woolen Bedding & Blanket for Gopal Ji",
+        name: "Magenta Teddy Bed (Deity Winter Bed)",
         category: "beds",
-        price: 400,
+        price: 149,
         tag: "Winter Comfort",
-        image: "images/img5.jpeg"
+        image: "images/img5.jpeg",
+        description: "Cozy hand-knitted magenta woolen bed with light pink trim and cute teddy pocket."
       },
       {
         id: 6,
-        name: "Evil EyeCrochet Mobile Pouch",
+        name: "Evil Eye Mobile cover",
         category: "accessories",
-        price: 300,
-        tag: "Essential",
-        image: "images/img6.jpeg"
+        price: 249,
+        tag: "Cozy Seva",
+        image: "images/img6.jpeg",
+        description: "Handcrafted evil eye mobile cover with intricate crochet details."
       },
       {
         id: 7,
-        name: "Crochet Pearl Toran for Mandir Dwar",
-        category: "decor",
-        price: 280,
-        tag: "Temple Decor",
-        image: "images/img7.jpeg"
+        name: "Wall Hanging shubh Labh Crochet Decor",
+        category: "accessories",
+        price: 399,
+        tag: "Premium Wool",
+        image: "images/img7.jpeg ",
+        description: "Handcrafted wall hanging with intricate crochet details, symbolizing prosperity and good fortune."
       },
       {
         id: 8,
-        name: "Handmade Woolen Batwa / Puja Purse",
+        name: "Handmade Red Rose Crochet Purse",
         category: "bags",
         price: 1299,
-        tag: "Popular",
-        image: "images/img8.png"
+        tag: "Essential",
+        image: "images/img8.png",
+        description: "100% handmade green woolen round purse featuring a 3D red crochet rose and pearl bead border."
       }
     ];
 
@@ -549,7 +425,6 @@
     let sortMode = 'featured';
     let isAdmin = false;
 
-    // DOM Elements
     const productsGrid = document.getElementById('products-grid');
     const wishlistGrid = document.getElementById('wishlist-grid');
     const cartItemsContainer = document.getElementById('cart-items-container');
@@ -559,10 +434,9 @@
     const navWishlistCount = document.getElementById('nav-wishlist-count');
     const toastContainer = document.getElementById('toast-container');
 
-    // Toast helper
     function showToast(message) {
       const toast = document.createElement('div');
-      toast.className = 'bg-slate-900 text-white text-xs px-4 py-2.5 rounded-lg shadow-lg border border-slate-700 flex items-center gap-2 transform transition-all duration-300';
+      toast.className = 'bg-slate-900 text-white text-xs px-4 py-2.5 rounded-lg shadow-lg border border-slate-700 flex items-center gap-2 transition-opacity duration-300';
       toast.innerHTML = `<span>✨</span><span>${message}</span>`;
       toastContainer.appendChild(toast);
       setTimeout(() => {
@@ -571,8 +445,6 @@
       }, 2500);
     }
 
-    // Render Products Grid with images
-    // Render Products Grid with Hover Quick View
     function renderProducts() {
       let filtered = products.filter(p => {
         const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
@@ -600,32 +472,35 @@
         return `
           <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group">
             
-            <!-- Image Area with Hover Quick View Overlay -->
-            <div class="h-48 w-full bg-slate-100 relative overflow-hidden cursor-pointer" onclick="openQuickView(${p.id})">
+            <!-- Full Uncropped Image Area -->
+            <div 
+              class="h-56 w-full bg-amber-50/30 relative overflow-hidden cursor-pointer flex items-center justify-center p-3" 
+              onclick="openQuickView(${p.id})"
+              onmouseenter="startHoverQuickView(${p.id})"
+              onmouseleave="cancelHoverQuickView()"
+            >
               <img 
                 src="${p.image}" 
                 alt="${p.name}" 
                 loading="lazy" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80';"
               />
               
-              <!-- Hover Button: Card par mouse aate hi yeh center me dikhega -->
-              <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="px-3 py-1.5 bg-white/95 text-slate-800 rounded-lg text-xs font-bold shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">
+              <div class="absolute inset-0 bg-slate-900/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3.5 py-1.5 bg-white text-slate-900 rounded-lg text-xs font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
                   👁 Quick View
                 </span>
               </div>
 
-              <!-- Badges & Wishlist -->
-              <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-600 text-white shadow-sm z-10">${p.tag}</span>
-              <button onclick="event.stopPropagation(); toggleWishlist(${p.id})" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-600 flex items-center justify-center shadow-md transition-transform hover:scale-110 z-10">
+              <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-600 text-white shadow-sm z-10">${p.tag}</span>
+              <button onclick="event.stopPropagation(); toggleWishlist(${p.id})" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white hover:bg-slate-50 text-slate-600 flex items-center justify-center shadow-md transition-transform hover:scale-110 z-10">
                 <span class="${isFav ? 'text-red-500 text-base' : 'text-slate-400 text-base'}">${isFav ? '♥' : '♡'}</span>
               </button>
             </div>
 
             <!-- Product Details -->
-            <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+            <div class="p-4 flex-1 flex flex-col justify-between space-y-3 border-t border-slate-100">
               <div onclick="openQuickView(${p.id})" class="cursor-pointer">
                 <h4 class="font-bold text-sm text-slate-900 leading-snug line-clamp-2 hover:text-blue-600 transition-colors">${p.name}</h4>
                 <div class="text-xs text-slate-500 mt-1 capitalize">Category: ${p.category.replace('-', ' ')}</div>
@@ -648,7 +523,6 @@
       }).join('');
     }
 
-    // Render Wishlist Grid with images
     function renderWishlist() {
       const favItems = products.filter(p => wishlist.includes(p.id));
       navWishlistCount.textContent = wishlist.length;
@@ -664,10 +538,10 @@
 
       wishlistGrid.innerHTML = favItems.map(p => `
         <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
-          <div class="h-36 w-full bg-slate-100 overflow-hidden">
-            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+          <div class="h-40 w-full bg-amber-50/30 p-3 flex items-center justify-center">
+            <img src="${p.image}" alt="${p.name}" class="max-h-full max-w-full object-contain">
           </div>
-          <div class="p-4 space-y-2 flex-1 flex flex-col justify-between">
+          <div class="p-4 space-y-2 flex-1 flex flex-col justify-between border-t border-slate-100">
             <div>
               <h4 class="font-bold text-xs text-slate-800 line-clamp-2">${p.name}</h4>
               <div class="text-amber-700 font-bold text-sm mt-1">₹${p.price}</div>
@@ -681,7 +555,6 @@
       `).join('');
     }
 
-    // Wishlist Toggle
     window.toggleWishlist = function(productId) {
       if (wishlist.includes(productId)) {
         wishlist = wishlist.filter(id => id !== productId);
@@ -694,7 +567,6 @@
       renderWishlist();
     };
 
-    // Cart Operations
     window.addToCart = function(productId) {
       const existing = cart.find(item => item.id === productId);
       if (existing) {
@@ -715,17 +587,13 @@
       cartTotalPrice.textContent = `₹${totalAmt}`;
 
       if (cart.length === 0) {
-        cartItemsContainer.innerHTML = `
-          <div class="py-12 text-center text-slate-400">
-            <p class="text-xs">Your devotional basket is empty.</p>
-          </div>
-        `;
+        cartItemsContainer.innerHTML = `<div class="py-12 text-center text-slate-400"><p class="text-xs">Your devotional basket is empty.</p></div>`;
         return;
       }
 
       cartItemsContainer.innerHTML = cart.map(item => `
         <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 gap-3">
-          <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded-lg object-cover border border-slate-200 shrink-0">
+          <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded-lg object-contain bg-white p-1 border border-slate-200 shrink-0">
           <div class="flex-1 min-w-0">
             <div class="text-xs font-bold text-slate-800 truncate">${item.name}</div>
             <div class="text-xs text-amber-700 font-semibold">₹${item.price} each</div>
@@ -749,7 +617,6 @@
       updateCartUI();
     };
 
-    // WhatsApp Checkout Formulation
     document.getElementById('btn-checkout-whatsapp').addEventListener('click', () => {
       if (cart.length === 0) {
         alert("Your cart is empty!");
@@ -766,7 +633,7 @@
       window.open(`https://wa.me/916396158333?text=${text}`, '_blank');
     });
 
-    // View Navigation Handler
+    // View Navigation
     const viewButtons = {
       'tab-btn-shop': 'view-shop',
       'mob-tab-shop': 'view-shop',
@@ -801,7 +668,6 @@
         activeNavTab.classList.add('bg-blue-50', 'text-blue-600', 'font-semibold');
         activeNavTab.classList.remove('text-slate-600');
       }
-
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -816,7 +682,6 @@
       }
     });
 
-    // Filter by Category
     document.getElementById('category-filter-group').addEventListener('click', (e) => {
       const button = e.target.closest('button');
       if (!button) return;
@@ -830,7 +695,6 @@
       renderProducts();
     });
 
-    // Search and Sort Listeners
     document.getElementById('header-search-input').addEventListener('input', (e) => {
       searchQuery = e.target.value;
       renderProducts();
@@ -841,7 +705,6 @@
       renderProducts();
     });
 
-    // User Dropdown Toggle
     const userMenuBtn = document.getElementById('user-menu-btn');
     const userDropdown = document.getElementById('user-dropdown');
     userMenuBtn.addEventListener('click', (e) => {
@@ -850,23 +713,16 @@
     });
     document.addEventListener('click', () => userDropdown.classList.add('hidden'));
 
-    // Mobile Navigation Toggle
     document.getElementById('mobile-menu-btn').addEventListener('click', () => {
       document.getElementById('mobile-nav-panel').classList.toggle('hidden');
     });
 
-    // Cart Modal Toggle
-    document.getElementById('btn-open-cart').addEventListener('click', () => {
-      cartDrawer.classList.remove('hidden');
-    });
-    document.getElementById('btn-close-cart').addEventListener('click', () => {
-      cartDrawer.classList.add('hidden');
-    });
+    document.getElementById('btn-open-cart').addEventListener('click', () => cartDrawer.classList.remove('hidden'));
+    document.getElementById('btn-close-cart').addEventListener('click', () => cartDrawer.classList.add('hidden'));
     cartDrawer.addEventListener('click', (e) => {
       if (e.target === cartDrawer) cartDrawer.classList.add('hidden');
     });
 
-    // Role Switcher Logic (Customer vs Admin)
     function toggleRole() {
       isAdmin = !isAdmin;
       const roleBadge = document.getElementById('role-indicator-badge');
@@ -885,7 +741,6 @@
         adminNavTab.classList.add('flex');
         mobAdminTab.classList.remove('hidden');
         dropAdminTab.classList.remove('hidden');
-        dropAdminTab.classList.add('flex');
         showToast("Switched to Admin Mode");
       } else {
         roleBadge.textContent = "Customer";
@@ -896,7 +751,6 @@
         adminNavTab.classList.remove('flex');
         mobAdminTab.classList.add('hidden');
         dropAdminTab.classList.add('hidden');
-        dropAdminTab.classList.remove('flex');
         showToast("Switched to Customer Mode");
         if (!document.getElementById('view-admin').classList.contains('hidden')) {
           switchView('view-shop');
@@ -906,21 +760,43 @@
 
     document.getElementById('btn-quick-switch-role').addEventListener('click', toggleRole);
     document.getElementById('dropdown-item-switch').addEventListener('click', toggleRole);
-// ================= QUICK VIEW MODAL LOGIC =================
+
+    // ================= QUICK VIEW MODAL MANAGER =================
     let currentQuickViewId = null;
+    let hoverTimer = null;
+
     const qvModal = document.getElementById('quickview-modal-backdrop');
+    const qvCard = document.getElementById('quickview-card');
     const qvCloseBtn = document.getElementById('btn-close-quickview');
+    const qvPrevBtn = document.getElementById('qv-prev-btn');
+    const qvNextBtn = document.getElementById('qv-next-btn');
     const qvImg = document.getElementById('qv-img');
     const qvTitle = document.getElementById('qv-title');
     const qvCategory = document.getElementById('qv-category');
     const qvTag = document.getElementById('qv-tag');
     const qvPrice = document.getElementById('qv-price');
+    const qvDesc = document.getElementById('qv-desc');
     const qvHeartIcon = document.getElementById('qv-heart-icon');
     const qvAddCartBtn = document.getElementById('qv-add-cart-btn');
     const qvWishlistBtn = document.getElementById('qv-wishlist-btn');
     const qvWhatsappBtn = document.getElementById('qv-whatsapp-btn');
 
+    window.startHoverQuickView = function(productId) {
+      cancelHoverQuickView();
+      hoverTimer = setTimeout(() => {
+        openQuickView(productId);
+      }, 450);
+    };
+
+    window.cancelHoverQuickView = function() {
+      if (hoverTimer) {
+        clearTimeout(hoverTimer);
+        hoverTimer = null;
+      }
+    };
+
     window.openQuickView = function(productId) {
+      cancelHoverQuickView();
       const product = products.find(p => p.id === productId);
       if (!product) return;
       currentQuickViewId = productId;
@@ -930,19 +806,58 @@
       qvCategory.textContent = product.category.replace('-', ' ');
       qvTag.textContent = product.tag;
       qvPrice.textContent = `₹${product.price}`;
-      
-      const isFav = wishlist.includes(productId);
-      qvHeartIcon.textContent = isFav ? '♥' : '♡';
-      qvHeartIcon.className = isFav ? 'text-red-500 font-bold' : 'text-slate-500';
+      qvDesc.textContent = product.description || "100% handmade pure crochet wool poshak with soft stitch finish.";
 
-      qvWhatsappBtn.href = `https://wa.me/916396158333?text=Radhe%20Radhe!%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}%20(₹${product.price})`;
+      updateQuickViewWishlistUI(productId);
+
+      qvWhatsappBtn.href = `https://wa.me/916396158333?text=Radhe%20Radhe!%20I%20want%20to%20order%20${encodeURIComponent(product.name)}%20(₹${product.price})`;
 
       qvModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     };
 
-    qvCloseBtn.addEventListener('click', () => qvModal.classList.add('hidden'));
+    function closeQuickView() {
+      qvModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function updateQuickViewWishlistUI(productId) {
+      const isFav = wishlist.includes(productId);
+      qvHeartIcon.textContent = isFav ? '♥' : '♡';
+      qvHeartIcon.className = isFav ? 'text-red-500 font-bold text-sm' : 'text-slate-500 text-sm';
+    }
+
+    function navigateQuickView(direction) {
+      if (!currentQuickViewId) return;
+      const currentIndex = products.findIndex(p => p.id === currentQuickViewId);
+      if (currentIndex === -1) return;
+      const nextIndex = (currentIndex + direction + products.length) % products.length;
+      openQuickView(products[nextIndex].id);
+    }
+
+    qvPrevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigateQuickView(-1);
+    });
+
+    qvNextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigateQuickView(1);
+    });
+
+    qvCloseBtn.addEventListener('click', closeQuickView);
+
     qvModal.addEventListener('click', (e) => {
-      if (e.target === qvModal) qvModal.classList.add('hidden');
+      if (!qvCard.contains(e.target)) {
+        closeQuickView();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (qvModal.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeQuickView();
+      if (e.key === 'ArrowLeft') navigateQuickView(-1);
+      if (e.key === 'ArrowRight') navigateQuickView(1);
     });
 
     qvAddCartBtn.addEventListener('click', () => {
@@ -952,11 +867,10 @@
     qvWishlistBtn.addEventListener('click', () => {
       if (currentQuickViewId) {
         toggleWishlist(currentQuickViewId);
-        const isFav = wishlist.includes(currentQuickViewId);
-        qvHeartIcon.textContent = isFav ? '♥' : '♡';
-        qvHeartIcon.className = isFav ? 'text-red-500 font-bold' : 'text-slate-500';
+        updateQuickViewWishlistUI(currentQuickViewId);
       }
     });
+
     // Initial Render
     renderProducts();
     renderWishlist();
