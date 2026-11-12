@@ -161,9 +161,59 @@
             </div>
           </div>
 <!-- ================= PRODUCT QUICK VIEW MODAL ================= -->
-  <div id="quickview-modal-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity">
-    <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden relative animate-in fade-in zoom-in duration-200">
-      
+  <div id="quickview-modal-backdrop" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden overflow-y-auto p-4 sm:p-6">
+    <div class="min-h-full flex items-center justify-center">
+      <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden relative my-8">
+        
+        <!-- Close Button -->
+        <button id="btn-close-quickview" class="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center shadow-sm transition-all cursor-pointer">
+          ✕
+        </button>
+
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <!-- Full Uncropped Image Box -->
+          <div class="bg-amber-50/40 h-72 sm:h-96 md:h-[420px] w-full flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-slate-100">
+            <img id="qv-img" src="" alt="Product Full Image" class="max-h-full max-w-full object-contain rounded-xl drop-shadow-md">
+          </div>
+
+          <!-- Details & Actions -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center gap-2 mb-2.5">
+                <span id="qv-tag" class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-amber-600 text-white"></span>
+                <span id="qv-category" class="text-xs font-semibold text-slate-400 uppercase tracking-wider"></span>
+              </div>
+              <h3 id="qv-title" class="text-xl font-bold text-slate-900 leading-snug"></h3>
+              <div id="qv-price" class="text-2xl font-extrabold text-amber-700 mt-2"></div>
+              <p id="qv-desc" class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                100% handmade pure crochet wool poshak with soft stitch finish. Designed for comfort and festive devotional shringar.
+              </p>
+              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 text-[11px] text-slate-600 space-y-1">
+                <div>✅ Soft skin-friendly wool for deity comfort</div>
+                <div>✅ Custom sizes available on WhatsApp chat</div>
+              </div>
+            </div>
+
+            <!-- Buttons inside Modal -->
+            <div class="space-y-2.5 pt-4 border-t border-slate-100">
+              <div class="flex gap-2">
+                <button id="qv-add-cart-btn" class="flex-1 py-2.5 bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold rounded-xl text-xs transition-colors cursor-pointer">
+                  + Add to Cart
+                </button>
+                <button id="qv-wishlist-btn" class="px-4 py-2.5 border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-pointer">
+                  <span id="qv-heart-icon">♡</span> Wishlist
+                </button>
+              </div>
+              <a id="qv-whatsapp-btn" href="#" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-xs shadow-md flex items-center justify-center gap-2 transition-all">
+                <span>💬 Order Now on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
       <!-- Close Button -->
       <button id="btn-close-quickview" class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center shadow-md transition-all">
         ✕
@@ -382,7 +432,7 @@
         </div>
         <div class="bg-white p-4 rounded-xl border border-slate-200">
           <div class="text-xs text-slate-500">Base Starting Price</div>
-          <div class="text-2xl font-bold text-blue-600 mt-1">₹99</div>
+          <div class="text-2xl font-bold text-blue-600 mt-1">₹200</div>
         </div>
       </div>
     </div>
@@ -430,63 +480,63 @@
         id: 1,
         name: "Laddu Gopal Winter Crochet Poshak (Size 0-2)",
         category: "laddu-gopal",
-        price: 99,
+        price: 200,
         tag: "Best Seller",
-        image: "images/img1.png"
+        image: "images/img1.jpeg"
       },
       {
         id: 2,
         name: "Handcrafted Laddu Gopal Heavy Zari Dress (Size 3-5)",
         category: "laddu-gopal",
-        price: 199,
+        price: 250,
         tag: "Handmade",
-        image: "images/img2.png"
+        image: "images/img2.jpeg"
       },
       {
         id: 3,
         name: "Mata Rani Chunri & Velvet Lehenga Set",
         category: "mata-rani",
-        price: 149,
+        price: 250,
         tag: "Festive Seva",
-        image: "images/img3.png"
+        image: "images/img3.jpeg"
       },
       {
         id: 4,
         name: "Khatu Shyam Baba Royal Baaga & Patka",
         category: "khatu-shyam",
-        price: 249,
+        price: 200,
         tag: "Devotional",
-        image: "images/img4.png "
+        image: "images/img4.jpeg "
       },
       {
         id: 5,
         name: "Soft Woolen Bedding & Blanket for Gopal Ji",
         category: "beds",
-        price: 129,
+        price: 400,
         tag: "Winter Comfort",
-        image: "images/img5.png"
+        image: "images/img5.jpeg"
       },
       {
         id: 6,
-        name: "Mukut & Bansuri Shringar Combo Pack",
+        name: "Evil EyeCrochet Mobile Pouch",
         category: "accessories",
-        price: 99,
+        price: 300,
         tag: "Essential",
-        image: "images/img6.png"
+        image: "images/img6.jpeg"
       },
       {
         id: 7,
         name: "Crochet Pearl Toran for Mandir Dwar",
         category: "decor",
-        price: 180,
+        price: 280,
         tag: "Temple Decor",
-        image: "images/img7.png"
+        image: "images/img7.jpeg"
       },
       {
         id: 8,
         name: "Handmade Woolen Batwa / Puja Purse",
         category: "bags",
-        price: 99,
+        price: 1299,
         tag: "Popular",
         image: "images/img8.png"
       }
